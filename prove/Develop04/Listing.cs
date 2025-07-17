@@ -1,6 +1,6 @@
 public class Listing : Activity
 {
-    private string[] prompts = {
+    private string[] _prompts = {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
         "Who are people that you have helped this week?",
@@ -15,7 +15,7 @@ public class Listing : Activity
     {
         Random random = new Random();
         _endTime = DateTime.Now.AddSeconds(_duration);
-        System.Console.WriteLine(prompts[random.Next(prompts.Length - 1)]);
+        System.Console.WriteLine(_prompts[random.Next(_prompts.Length - 1)]);
         int count = 1;
         while (DateTime.Compare(DateTime.Now, _endTime) < 0)
         {

@@ -1,13 +1,13 @@
 public class Reflection : Activity
 {
 
-    private string[] prompts = {
+    private string[] _prompts = {
         "Think of a time when you stood up for someone else.", 
         "Think of a time when you did something really difficult.", 
         "Think of a time when you helped someone in need.", 
         "Think of a time when you did something truly selfless."
     };
-    private string[] questions = {
+    private string[] _questions = {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
         "How did you get started?",
@@ -26,11 +26,11 @@ public class Reflection : Activity
     {
         Random random = new Random();
         _endTime = DateTime.Now.AddSeconds(_duration);
-        System.Console.WriteLine(prompts[random.Next(prompts.Length-1)]);
+        System.Console.WriteLine(_prompts[random.Next(_prompts.Length-1)]);
         DisplaySpinner(10);
         while (DateTime.Compare(DateTime.Now, _endTime) < 0)
         {
-            System.Console.WriteLine(questions[random.Next(questions.Length - 1)]);
+            System.Console.WriteLine(_questions[random.Next(_questions.Length - 1)]);
             DisplaySpinner(7);
         }
     }
