@@ -1,4 +1,0 @@
-Test#0
-Simple#SGT#SGT#0#False#12
-Checklist#CGT#CGTest#0#False#10#5#25
-Eternal#EGT#EGTest#0#10

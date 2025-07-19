@@ -17,9 +17,13 @@ class Program
                     case 1: // Open User
                         Console.Clear();
                         Console.WriteLine("Which User would you like to view?");
+                        string userFile = Menu.GetUserFile();
+                        if (userFile == null)
+                        {
+                            continue;
+                        }
                         user = new User();
-                        user.LoadInfo(Menu.GetUserFile());
-                        Console.Clear();
+                        user.LoadInfo(userFile);
                         break;
                     case 2: // Create New User
                         Console.Clear();

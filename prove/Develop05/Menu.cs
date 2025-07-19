@@ -5,7 +5,7 @@ public static class Menu
     {
         Console.WriteLine("Welcome to your Eternal Quest! What would you like to do?");
         Console.WriteLine("1. Open User");
-        Console.WriteLine("2. Create new User");
+        Console.WriteLine("2. Create New User");
         Console.WriteLine("0. Quit");
         Console.WriteLine("");
     }
@@ -34,6 +34,12 @@ public static class Menu
     public static string GetUserFile()
     {
         string[] users = Directory.GetFiles("users");
+        if (users.Length == 0)
+        {
+            Console.Clear();
+            Console.WriteLine("No users to choose from. Please create a user first.");
+            return null;
+        }
         for (int i = 0; i < users.Length; i++)
         {
             Console.WriteLine($"{i + 1}. {users[i].Replace("users\\", "").Replace("_", " ").Replace(".txt", "")}");
